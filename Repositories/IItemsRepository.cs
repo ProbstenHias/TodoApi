@@ -4,12 +4,12 @@ namespace TodoApi.Repositories
 {
     public interface IItemsRepository
     {
-        Item? GetItem(Guid id);
-        IEnumerable<Item> GetItems();
+        Task<Item>? GetItemAsync(Guid id);
+        Task<IEnumerable<Item>> GetItemsAsync();
 
-        void createItem(Item item);
-        void UpdateItem(Item item);
-        void DeleteItem(Guid id);
+        Task createItemAsync(Item item);
+        Task UpdateItemAsync(Item item);
+        Task DeleteItemAsync(Guid id);
     }
 
 }
